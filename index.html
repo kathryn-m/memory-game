@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="index.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap" rel="stylesheet"> 
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#2d89ef">
+        <meta name="theme-color" content="#ffffff">
+        
+        <title>Memory by Kathryn M.</title>
+        <meta name="description" content="The classic card game Memory, with three levels of difficulty and up to 24 cards.  Can you beat the computer?">
+    
+    </head>
+    <body>
+        
+        <div class="wrapper flow-content--variable flex-column">
+                <div class="modal--background">
+                </div>
+                <div class="title container flow-content">
+                    <div class="flex-row">
+                        <h1 id="titlemain" translate="no">Memory</h1>
+                        <div class="game-image">
+                            <div class="game-image__card1"></div>
+                            <div class="game-image__card2 center-children">⭐</div>
+                        </div>
+                    </div>
+                    <div class="intro-text">
+                        <p id="intro1" translate="no">Turn over two cards each turn.</p>
+                        <p id="intro2" translate="no">Found a pair? Get another turn!</p>
+                        <p id="intro3" translate="no">Uncover the most pairs to win.</p>
+                        <p id="intro4" translate="no">Can you beat the computer?</p>
+                    </div>
+                </div>
+                <div class="settings container flow-content">
+                    <div class="flow-content--small">
+                            <h3 id="titlestartingplayer" translate="no">Starting player</h3>
+                            <div class="flex-row">
+                                <div>
+                                    <input type="radio" id="human-start" class="starting-player-input" name="starting-player" value="true" checked>
+                                    <label for="human-start" id="player1" class="radio-btn" translate="no">Me</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="computer-start" class="starting-player-input" name="starting-player" value="false">
+                                    <label for="computer-start" id="player2" class="radio-btn" translate="no">Computer</label>
+                                </div>
+                                <div></div>
+                            </div>
+                    </div> 
+                    <div class="flow-content--small">
+                        <div class="difficulty--title">
+                            <h3 id="titledifficulty" translate="no">Difficulty</h3>
+                            <button class="info">?</button>
+                        </div>
+                        <div class="flex-row">
+                            <div>
+                                <input type="radio" id="easy" class="difficulty-input" name="difficulty" value="easy" checked>
+                                <label for="easy" id="difficulty1" class="radio-btn" translate="no">Easy</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="medium" class="difficulty-input" name="difficulty" value="medium">
+                                <label for="medium" id="difficulty2" class="radio-btn" translate="no">Medium</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="hard" class="difficulty-input" name="difficulty" value="hard">
+                                <label for="hard" id="difficulty3" class="radio-btn" translate="no">Hard</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flow-content--small">
+                        <h3 id="titlenumcards" translate="no">Number of cards</h3>
+                        <div class="flex-row">
+                            <div class="radio-btn-8">
+                                <input type="radio" id="eight" class="deck-size-input" name="deck-size" value="8" checked>
+                                <label for="eight" class="radio-btn">8</label>
+                            </div>
+                            <div class="radio-btn-16">
+                                <input type="radio" id="sixteen" class="deck-size-input" name="deck-size" value="16">
+                                <label for="sixteen" class="radio-btn">16</label>
+                            </div>
+                            <div class="radio-btn-24">
+                                <input type="radio" id="twenty-four" class="deck-size-input" name="deck-size" value="24">
+                                <label for="twenty-four" class="radio-btn">24</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="difficulty--explanation flow-content flex-column container">
+                        <button class="close">&times;</button>
+                        <h2 id="titlediffexplan" translate="no">Difficulty levels</h2>
+                        <div>
+                        <h3 id="titleeasy" translate="no">Easy</h3>
+                        <p id="paraeasy">The computer randomly chooses two cards each turn.</p>
+                        </div>
+                        <div>
+                        <h3 id="titlemedium" translate="no">Medium</h3>
+                        <p id="paramedium">The computer remembers the cards played on the most recent turns (the last 2, 4 or 6 turns, depending on the deck size ).</p>
+                        </div>
+                        <div>
+                        <h3 id="titlehard" translate="no">Hard</h3>
+                        <p id="parahard">The computer remembers every card played!</p>
+                        </div>
+                    </div> 
+                </div>
+                <div class="scoreboard container flow-content">
+                        <div>
+                            <p id="startmessagehuman" translate="no" class="message"></p>
+                            <p id="startmessagecomputer" translate="no" class="message"></p>
+                            <p id="continueturnhuman" translate="no" class="message"></p>
+                            <p id="continueturncomputer" translate="no" class="message"></p>
+                            <p id="newturnhuman" translate="no" class="message"></p>
+                            <p id="newturncomputer" translate="no" class="message"></p>
+                            <p id="pairmessagehuman" translate="no" class="message"></p>
+                            <p id="pairmessagecomputer" translate="no" class="message"></p>
+                            <p id="scoremessage" translate="no" class="message"></p>
+                        </div>
+                        <div class="player--human flex-row">
+                            <p id="titlehuman" class="player-name" translate="no">Human</p>
+                            <p id="human-score"></p>
+                            <p id="human-emojis"></p>
+                        </div>
+                        <div class="player--computer flex-row">
+                            <p id="titlecomputer" class="player-name" translate="no">Computer</p>
+                            <p id="computer-score"></p>
+                            <p id="computer-emojis"></p>
+                        </div>
+                </div>
+                <div class="container--cards center-children">
+                    <div class="winner-screen--human center-children">
+                        <p class="winner-emoji">🏆</p>
+                        <p id="winnerhuman1" class="winner-text--big" translate="no">Congratulations!</p>
+                        <p id="winnerhuman2" class="winner-text--small" translate="no">You beat the computer!</p>
+                    </div>
+                    <div class="winner-screen--computer center-children">
+                        <p class="winner-emoji">🤭</p>
+                        <p id="winnercomputer1" class="winner-text--big" translate="no">The computer won!</p>
+                        <p id="winnercomputer2" class="winner-text--small" translate="no">Better luck next time!</p>
+
+                    </div>
+                    <div class="winner-screen--tie center-children">
+                        <p class="winner-emoji">🐳</p>
+                        <p id="winnertie1" class="winner-text--big" translate="no">It's a tie!</p>
+                        <p id="winnertie2" class="winner-text--small" translate="no">Good effort!</p>
+                    </div>
+                    <div id="cards" class="center-grand-children">
+                        <!-- javasript-generated cards will go here-->
+                    </div>
+                </div>
+                <div class="buttons center-children">
+                    <button id="startbutton" class="start-button" translate="no">Start game</button>
+                    <button id="exitbutton" class="exit-button" translate="no">Exit game</button>
+                    <button id="playagainbutton" class="play-again-button" translate="no">Play again</button>
+                </div>
+                <footer class="container--footer">
+                    <p lang="en" translate="no">&copy; 2021 Kathryn M.</p>
+                    <div class="languages">
+                        <div class="flex-row">
+                            <input type="radio" id="french" class="radio-btn--language" name="language" value="fr">
+                            <label for="french" class="language--french" lang="fr" translate="no">Français</label>
+                        </div>
+                        <div class="flex-row">
+                            <input type="radio" id="english" class="radio-btn--language" name="language" value="en" checked>
+                            <label for="english" class="language--english" lang="en" translate="no">English</label>
+                        </div>
+                    </div>
+                </footer>
+        </div>
+        <script src="index.js"></script> 
+    </body>
+</html>
