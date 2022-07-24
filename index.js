@@ -143,7 +143,6 @@ function setStartingPlayer(){
     }else{
         isHumanTurn = false
     }
-    console.log(`humanStartinput is ${humanStartInput.checked}`)
 }
 
 
