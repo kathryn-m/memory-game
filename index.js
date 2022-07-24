@@ -472,7 +472,7 @@ function endTurnOrGame () {
             scoreMessage()
 	//new code below
 		//hideStartMessage()
-		//hidePlayerMessage()
+		//hidePlayerTurnMessage()
 	//new code above
 
             if(outcome === "humanWinner"){
