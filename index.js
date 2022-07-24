@@ -133,6 +133,11 @@ function startGame (){
     dealCards()
     playerTurnShadow()
     startMessage()
+	//new code below
+
+            // hideStartMessage()
+            hidePlayerTurnMessage()
+            //new code above
     let delay = setDelayForDealingCards()
     selectHumanOrComputerTurn(delay)
 }
