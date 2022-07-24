@@ -61,7 +61,9 @@ let card2 = []
 
 let isHumanTurn 
 let turnCount = 0
-
+//new code below
+let sameTurn = false
+//new code above
 let humanScoreCount = 0
 let computerScoreCount = 0
 
