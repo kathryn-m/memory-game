@@ -61,9 +61,7 @@ let card2 = []
 
 let isHumanTurn 
 let turnCount = 0
-//new code below
 let sameTurn = false
-//new code above
 let humanScoreCount = 0
 let computerScoreCount = 0
 
@@ -135,11 +133,6 @@ function startGame (){
     dealCards()
     playerTurnShadow()
     startMessage()
-	//new code below
-
-            // hideStartMessage()
-            //hidePlayerTurnMessage()
-            //new code above
     let delay = setDelayForDealingCards()
     selectHumanOrComputerTurn(delay)
 }
@@ -470,10 +463,6 @@ function endTurnOrGame () {
             cardDisplay.style.display = "none"
             hidePairMessage()
             scoreMessage()
-	//new code below
-		//hideStartMessage()
-		//hidePlayerTurnMessage()
-	//new code above
 
             if(outcome === "humanWinner"){
                 winnerScreenHuman.style.display = "block"
