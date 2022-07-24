@@ -463,6 +463,10 @@ function endTurnOrGame () {
             cardDisplay.style.display = "none"
             hidePairMessage()
             scoreMessage()
+	//new code below
+		hideStartMessage()
+		hidePlayerMessage()
+	//new code above
 
             if(outcome === "humanWinner"){
                 winnerScreenHuman.style.display = "block"
