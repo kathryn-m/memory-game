@@ -138,7 +138,7 @@ function startGame (){
 	//new code below
 
             // hideStartMessage()
-            hidePlayerTurnMessage()
+            //hidePlayerTurnMessage()
             //new code above
     let delay = setDelayForDealingCards()
     selectHumanOrComputerTurn(delay)
@@ -471,8 +471,8 @@ function endTurnOrGame () {
             hidePairMessage()
             scoreMessage()
 	//new code below
-		hideStartMessage()
-		hidePlayerMessage()
+		//hideStartMessage()
+		//hidePlayerMessage()
 	//new code above
 
             if(outcome === "humanWinner"){
