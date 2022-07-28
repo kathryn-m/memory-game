@@ -21,7 +21,6 @@ const humanFinalScore = document.querySelectorAll('.human-final-score')
 const computerFinalScore = document.querySelectorAll('.computer-final-score')
 
 const startButton = document.querySelector('.start-button')
-const exitButton = document.querySelector('.exit-button')
 const playAgainButton = document.querySelector('.play-again-button')
 const infoButton = document.querySelector('.info')
 const closeButton = document.querySelector('.close')
@@ -61,7 +60,10 @@ let card2 = []
 
 let isHumanTurn 
 let turnCount = 0
+//new code below
 let sameTurn = false
+//new code above
+
 let humanScoreCount = 0
 let computerScoreCount = 0
 
@@ -90,7 +92,6 @@ function setScreen1(){
     scoreboard.style.display = "none"
 
     startButton.style.display = "block"
-    exitButton.style.display = "none"
     playAgainButton.style.display = "none"
 
 
@@ -107,7 +108,6 @@ setScreen1()
 infoButton.addEventListener("click", openInfo)
 closeButton.addEventListener("click", closeInfo)
 startButton.addEventListener("click", startGame)
-exitButton.addEventListener("click", setScreen1)
 playAgainButton.addEventListener("click", setScreen1)
 
 
@@ -132,6 +132,11 @@ function startGame (){
     createCards()
     dealCards()
     playerTurnShadow()
+            //new code below
+
+            // hideStartMessage()
+    hidePlayerTurnMessage()
+            //new code above
     startMessage()
     let delay = setDelayForDealingCards()
     selectHumanOrComputerTurn(delay)
@@ -182,7 +187,6 @@ function setScreen2(){
     scoreboard.style.display = "block"
 
     startButton.style.display = "none"
-    exitButton.style.display = "block"
     playAgainButton.style.display = "none"
 }
 
@@ -454,7 +458,6 @@ function endTurnOrGame () {
     if(outcome !== "continueGame"){
         const timeoutID1 = setTimeout(()=> {
             startButton.style.display = "none"
-            exitButton.style.display = "none"
             playAgainButton.style.display = "block"
             humanFinalScore.forEach(score => score.textContent = humanScoreCount)
             computerFinalScore.forEach(score => score.textContent = computerScoreCount)
@@ -462,6 +465,11 @@ function endTurnOrGame () {
             cardDisplay.style.display = "none"
             hidePairMessage()
             scoreMessage()
+            //new code below
+
+            // hideStartMessage()
+            // hidePlayerTurnMessage()
+            //new code above
 
             if(outcome === "humanWinner"){
                 winnerScreenHuman.style.display = "block"
